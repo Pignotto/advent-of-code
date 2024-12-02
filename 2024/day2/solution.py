@@ -1,6 +1,6 @@
-from sys import stdin
+with open("input") as file:
+    a = [[int(x) for x in line.split()] for line in file]
 
-a = [list(map(int, line.split())) for line in stdin]
 b = [[a-b for a, b in zip(r[:-1], r[1:])] for r in a]
 c = [[p>0 for p in r] for r in b]
 d = [[1<=abs(p)<=3 for p in r] for r in b]
